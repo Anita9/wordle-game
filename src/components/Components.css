@@ -1,0 +1,57 @@
+.gridContainer {
+  display: grid;
+  width: 50%;
+  height: 70vh;
+  grid-template-rows: repeat(6, 14%);
+}
+
+.rowContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 16.5%);
+}
+
+.letterContainer {
+  border-radius: 5px;
+  height: 60px;
+  width: 60px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.initialLetter {
+  border: 1px solid #272727;
+  color: #272727;
+}
+
+.correctLetter {
+  border: 1px solid #1b852f;
+  color: #1b852f;
+  background-color: rgba(112, 183, 126, 0.7);
+}
+
+.incorrectLetter {
+  border: 1px solid #960b09;
+  color: #960b09;
+  background-color: rgba(184, 12, 9, 0.7);
+}
+
+.misplasedLetter {
+  border: 1px solid #9e7c15;
+  color: #9e7c15;
+  background-color: rgba(254, 215, 102, 0.7);
+}
+
+.keyboardContainer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.keyboardRow {
+  display: flex;
+  justify-content: center;
+}
+
+.keyboardRow:last-child {
+  margin-bottom: 30px;
+}
