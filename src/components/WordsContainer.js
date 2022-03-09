@@ -8,7 +8,8 @@ const WordsContainer = (props) => {
     guessedWords,
     currentGuessedWord,
     isWordCorrect,
-    isWordIncorrect
+    isWordIncorrect,
+    isWriting
   } = props;
 
   return (
@@ -26,6 +27,7 @@ const WordsContainer = (props) => {
         <CurrentWord
           currentGuessedWord={currentGuessedWord}
           guessedWords={guessedWords}
+          isWriting={isWriting}
         />
       )
     }

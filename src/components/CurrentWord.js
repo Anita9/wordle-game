@@ -5,7 +5,7 @@ import Letter from './Letter';
 import './Components.css';
 
 const CurrentWord = (props) => {
-  const {currentGuessedWord, guessedWords} = props;
+  const {currentGuessedWord, guessedWords, isWriting} = props;
   const splittedWord = splitWord(currentGuessedWord);
   const emptyCells = Array.from(Array(6 - splittedWord.length));
 
@@ -19,6 +19,10 @@ const CurrentWord = (props) => {
           key={index}
           value={letter}
           status={lettersStatuses[letter] === 'incorrect' ? lettersStatuses[letter] : null}
+          isCurrentWord={true}
+          isWriting={isWriting}
+          splittedWord={splittedWord}
+          index={index}
           />
        ))
      }

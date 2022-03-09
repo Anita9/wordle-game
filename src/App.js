@@ -14,6 +14,7 @@ const App = () => {
   const [isWordCorrect, setIsWordCorrect] = useState(false);
   const [isWordIncorrect, setIsWordIncorrect] = useState(false);
   const [showGameOverModal, setShowGameOverModal] = useState(false);
+  const [isWriting, setIsWriting] = useState(false);
 
   useEffect(() => {
     setSelectedWord(chosenWord);
@@ -47,9 +48,11 @@ const App = () => {
   }
 
   const onChar = value => {
+    setIsWriting(true);
     if(getWordArrayLength(`${currentGuessedWord}${value}`) <= 6 && guessedWords.length < 7 && !isWordCorrect) {
       setCurrentGuessedWord(`${currentGuessedWord}${value}`);
     }
+    setTimeout(() => {setIsWriting(false)}, 150);
   }
 
   const onPlayAgain = () => {
@@ -71,6 +74,7 @@ const App = () => {
         currentGuessedWord={currentGuessedWord}
         isWordCorrect={isWordCorrect}
         isWordIncorrect={isWordIncorrect}
+        isWriting={isWriting}
       />
       <Keyboard
         onEnter={onEnter}

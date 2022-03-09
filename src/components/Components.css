@@ -25,6 +25,11 @@
   color: #272727;
 }
 
+.initialLetterAnimate {
+  transition: transform .8s ease;
+  transform: scale(1.03);
+}
+
 .correctLetter {
   border: 1px solid #1b852f;
   color: #1b852f;
@@ -35,6 +40,30 @@
   border: 1px solid #960b09;
   color: #960b09;
   background-color: rgba(184, 12, 9, 0.7);
+}
+
+.letter-jiggle {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(1.5px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(2px, 0, 0);
+  }
 }
 
 .misplasedLetter {
@@ -53,6 +82,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
+  height: 40px;
 }
 
 .keyboardRow:last-child {
@@ -66,6 +96,11 @@
   cursor: pointer;
   font-weight: 600;
   box-shadow: 2px 3px 2px 0px #8694a8;
+  transition: transform .5s ease;
+}
+
+.key:hover {
+  transform: scale(1.1);
 }
 
 .letterKey {
@@ -104,7 +139,7 @@
   border-radius: 10px;
   position: absolute;
   top: 10vh;
-  left: 30vw;
+  left: 29.8vw;
   box-shadow: 2px 3px 2px 0px #8694a8;
 }
 
@@ -171,10 +206,10 @@
 
 .modalBtnCancel {
   margin-left: 10px;
-  border: 1px solid #960b09;
-  color: #960b09;
+  border: 1px solid #302d2d;
+  color: #302d2d;
   border-radius: 5px;
-  background-color: rgba(184, 12, 9, 0.7);
+  background-color: rgba(71, 68, 68, 0.7);
   height: 35px;
 }
 
