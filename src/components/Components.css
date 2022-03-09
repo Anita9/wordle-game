@@ -1,21 +1,23 @@
-.gridContainer {
+.wordsContainer {
   display: grid;
-  width: 50%;
-  height: 70vh;
+  width: 40%;
+  height: 60vh;
   grid-template-rows: repeat(6, 14%);
 }
 
 .rowContainer {
   display: grid;
   grid-template-columns: repeat(6, 16.5%);
+  justify-items: center;
 }
 
 .letterContainer {
   border-radius: 5px;
-  height: 60px;
-  width: 60px;
-  font-size: 40px;
+  height: 45px;
+  width: 45px;
+  font-size: 30px;
   text-align: center;
+  box-shadow: 2px 3px 2px 0px #8694a8;
 }
 
 .initialLetter {
@@ -50,8 +52,149 @@
 .keyboardRow {
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .keyboardRow:last-child {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.key {
+  height: 35px;
+  margin-right: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 2px 3px 2px 0px #8694a8;
+}
+
+.letterKey {
+  border: 1px solid #272727;
+  background: transparent;
+  width: 35px;
+}
+
+.incorrectKey {
+  border: 1px solid #960b09;
+  color: #960b09;
+  width: 35px;
+  background-color: rgba(184, 12, 9, 0.7);
+}
+
+.enterKey {
+  border: 1px solid #1b852f;
+  color: #1b852f;
+  width: 60px;
+  background-color: rgba(112, 183, 126, 0.7);
+}
+
+.deleteKey {
+  border: 1px solid #302d2d;
+  color: #302d2d;
+  width: 65px;
+  background-color: rgba(71, 68, 68, 0.7);
+}
+
+.modalWrapper {
+  background-color: #ffffff;
+  border: 1px solid #272727;
+  margin: 100px auto 0;
+  transition: all .8s;
+  width: 40%;
+  border-radius: 10px;
+  position: absolute;
+  top: 10vh;
+  left: 30vw;
+  box-shadow: 2px 3px 2px 0px #8694a8;
+}
+
+.modalBody {
+  padding: 10px 15px;
+  text-align: center;
+  height: 25vh;
+}
+
+.modalBody img {
+  float: left;
+  padding-left: 1vw;
+  padding-top: 1vh;
+}
+
+.modalTitleCorrect {
+  color: #1b852f;
+}
+
+.modalTitleIncorrect {
+  color: #960b09;
+}
+
+.spanFontBold {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.spanFont13 {
+  font-size: 13px;
+}
+
+.spanFont12 {
+  font-size: 12px;
+}
+
+.modalTextWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#selectedWord {
+  color: #960b09;
+}
+
+.modalBtnsWrapper {
+  float: right;
+  margin-right: 10px;
+}
+
+.modalBtnsWrapper button:hover {
+  cursor: pointer;
+}
+
+.modalBtnPlay {
+  margin-left: 10px;
+  border: 1px solid #449094;
+  color: #2f6568;
+  border-radius: 5px;
+  background-color: rgba(90, 160, 163, 0.7);
+  height: 35px;
+}
+
+.modalBtnCancel {
+  margin-left: 10px;
+  border: 1px solid #960b09;
+  color: #960b09;
+  border-radius: 5px;
+  background-color: rgba(184, 12, 9, 0.7);
+  height: 35px;
+}
+
+.closeModalBtn {
+  position: absolute;
+  top: 1vh;
+  right: 2vw;
+  cursor: pointer;
+  font-size: 30px;
+  margin: 0;
+}
+
+.closeModalBtnCorrect {
+  color: #1b852f;
+}
+
+.closeModalBtnIncorrect {
+  color: #960b09;
+}
+
+.closeModalBtn:hover {
+  color: #272727;
 }

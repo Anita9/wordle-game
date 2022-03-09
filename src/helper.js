@@ -58,4 +58,28 @@ export const getWordStatuses = word => {
 
   return letterStatuses;
 }
+
+export const getExistingWordsStatuses = (guessedWords) => {
+  const letters = {};
+  const splitChosenWord = splitWord(chosenWord);
+
+  guessedWords.forEach((word) => {
+    splitWord(word).forEach((letter, index) => {
+      if (!splitChosenWord.includes(letter)) {
+        return (letters[letter] = 'incorrect');
+      }
+
+      if(letter === splitChosenWord[index]) {
+        return (letters[letter] = 'correct');
+      }
+
+      if(letters[letter] !== 'correct') {
+        return (letters[letter] = 'misplaced');
+      }
+    })
+  })
+
+  return letters;
+}
+
 export const chosenWord = getSelectedWord();

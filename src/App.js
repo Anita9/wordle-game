@@ -4,6 +4,7 @@ import WordsContainer from './components/WordsContainer';
 import './App.css';
 import { getWordArrayLength, isCorrectWord, chosenWord, splitWord } from './helper';
 import Keyboard from './components/Keyboard';
+import GameOverModal from './components/GameOverModal';
 
 const App = () => {
 
@@ -11,7 +12,8 @@ const App = () => {
   const [guessedWords, setGuessedWords] = useState([]);
   const [currentGuessedWord, setCurrentGuessedWord] = useState('');
   const [isWordCorrect, setIsWordCorrect] = useState(false);
-  const [isWordIncorrect, setIsWordIncorrect] = useState(false)
+  const [isWordIncorrect, setIsWordIncorrect] = useState(false);
+  const [showGameOverModal, setShowGameOverModal] = useState(false);
 
   useEffect(() => {
     setSelectedWord(chosenWord);
@@ -29,13 +31,13 @@ const App = () => {
       setCurrentGuessedWord('');
 
       if (correctWord) {
-        setIsWordCorrect(true)
-        setTimeout(() => {alert('Congratulations! You won!')}, 300);
+        setIsWordCorrect(true);
+        setShowGameOverModal(true);
       }
 
       if (guessedWords.length === 6) {
-        setIsWordIncorrect(true)
-        setTimeout(() => {alert(`You didn't guess the word.`)}, 300);
+        setIsWordIncorrect(true);
+        setShowGameOverModal(true);
       }
     }
   }
@@ -48,6 +50,15 @@ const App = () => {
     if(getWordArrayLength(`${currentGuessedWord}${value}`) <= 6 && guessedWords.length < 7 && !isWordCorrect) {
       setCurrentGuessedWord(`${currentGuessedWord}${value}`);
     }
+  }
+
+  const onPlayAgain = () => {
+    setShowGameOverModal(false);
+    window.location.reload(false);
+  }
+
+  const onCancel = () => {
+    setShowGameOverModal(false);
   }
 
   console.log('selectedword ', selectedWord);
@@ -67,6 +78,15 @@ const App = () => {
         onDelete={onDelete}
         guessedWords={guessedWords}
       />
+      {showGameOverModal &&
+        <GameOverModal
+          show={showGameOverModal}
+          isWordCorrect={isWordCorrect}
+          isWordIncorrect={isWordIncorrect}
+          selectedWord={selectedWord}
+          onPlayAgain={onPlayAgain}
+          onCancel={onCancel}
+        />}
     </div>
   )
 

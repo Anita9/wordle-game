@@ -12,7 +12,7 @@ const WordsContainer = (props) => {
   } = props;
 
   return (
-    <div className='gridContainer'>
+    <div className='wordsContainer'>
     {
       guessedWords.map((word, index) => (
         <CompletedWord
@@ -25,6 +25,7 @@ const WordsContainer = (props) => {
       guessedWords.length < 7 && !isWordCorrect && !isWordIncorrect && (
         <CurrentWord
           currentGuessedWord={currentGuessedWord}
+          guessedWords={guessedWords}
         />
       )
     }

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { getExistingWordsStatuses } from "../helper";
 
 import './Components.css';
 import Key from "./Key";
@@ -7,7 +8,8 @@ const Keyboard = (props) => {
   const {
     onEnter,
     onChar,
-    onDelete
+    onDelete,
+    guessedWords
   } = props;
 
   const onClick = value => {
@@ -48,6 +50,8 @@ const Keyboard = (props) => {
   const secondRow = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
   const thirdRow = ['Z', 'X', 'C', 'V', 'B', 'N', 'M'];
   
+  const lettersStatuses = getExistingWordsStatuses(guessedWords);
+
   return (
     <div className="keyboardContainer">
       <div className="keyboardRow">
@@ -56,6 +60,7 @@ const Keyboard = (props) => {
             value={key}
             key={key}
             onClick={onClick}
+            status={lettersStatuses[key]}
           />
         ))}
       </div>
@@ -65,6 +70,7 @@ const Keyboard = (props) => {
             value={key}
             key={key}
             onClick={onClick}
+            status={lettersStatuses[key]}
           />
         ))}
       </div>
@@ -77,6 +83,7 @@ const Keyboard = (props) => {
             value={key}
             key={key}
             onClick={onClick}
+            status={lettersStatuses[key]}
           />
         ))}
         <Key value="DELETE" onClick={onClick}>
