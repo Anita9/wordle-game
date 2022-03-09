@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/wordle-game/static/css/main.d176a978.css",
+    "main.js": "/wordle-game/static/js/main.53192aaf.js",
+    "static/media/gameloststickman.jpg": "/wordle-game/static/media/gameloststickman.84f5a661394bfd7bbc5a.jpg",
+    "static/media/gamewonstickman.jpg": "/wordle-game/static/media/gamewonstickman.18297e803b30914af335.jpg",
+    "index.html": "/wordle-game/index.html",
+    "main.d176a978.css.map": "/wordle-game/static/css/main.d176a978.css.map",
+    "main.53192aaf.js.map": "/wordle-game/static/js/main.53192aaf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d176a978.css",
+    "static/js/main.53192aaf.js"
+  ]
+}
