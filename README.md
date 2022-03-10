@@ -3,6 +3,7 @@ Guess the word in 7 attempts.
 
 ## Environment
 
+- Node 16.14.0
 - React 17.0.2
 
 ## Prerequisites
