@@ -1,0 +1,12 @@
+export const GAME_TITLE = "The Wordle Game";
+export const YOU_ARE_ON_FIRE = `You're on fire!`;
+export const YOU_WON = "You won!";
+export const WIN_PLAY_AGAIN_MESSAGE = "Now go ahead and click that Play again button.";
+export const BEAT_YOU_MESSAGE = `I'm sure I can beat you this time.`;
+export const YOU_LOST_MESSAGE = `Nah, that wasn't it.`;
+export const WORD_WAS = "The word was ";
+export const LOSE_PLAY_AGAIN_MESSAGE = "Click the Play again button and show us you can do it!";
+export const PLAY_AGAIN_BTN = "Play again";
+export const CANCEL_BTN = "Cancel";
+export const ENTER_BTN = "ENTER";
+export const DELETE_BTN = "DELETE";

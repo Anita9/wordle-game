@@ -1,13 +1,15 @@
-import React from 'react'
-import { getExistingWordsStatuses, splitWord } from '../helper';
+import React from 'react';
 import Letter from './Letter';
+
+import { getExistingWordsStatuses, splitWord } from '../helper';
+import {MAX_WORD_LENGTH} from '../Constants';
 
 import './Components.css';
 
 const CurrentWord = (props) => {
   const {currentGuessedWord, guessedWords, isWriting} = props;
   const splittedWord = splitWord(currentGuessedWord);
-  const emptyCells = Array.from(Array(6 - splittedWord.length));
+  const emptyCells = Array.from(Array(MAX_WORD_LENGTH - splittedWord.length));
 
   const lettersStatuses = getExistingWordsStatuses(guessedWords);
   

@@ -2,6 +2,8 @@ import React from 'react'
 import GameWonStickman from '../img/gamewonstickman.jpg';
 import GameLostStickman from '../img/gameloststickman.jpg';
 
+import {BEAT_YOU_MESSAGE, CANCEL_BTN, LOSE_PLAY_AGAIN_MESSAGE, PLAY_AGAIN_BTN, WIN_PLAY_AGAIN_MESSAGE, WORD_WAS, YOU_ARE_ON_FIRE, YOU_LOST_MESSAGE, YOU_WON} from '../Strings';
+
 import './Components.css';
 
 const GameOverModal = (props) => {
@@ -25,10 +27,10 @@ const GameOverModal = (props) => {
             <div>
               <img src={GameWonStickman} alt='Game won stickman'/>
               <div className='modalTextWrapper'>
-                <h3 className='modalTitleCorrect'>You're on fire!</h3>
-                <span className='spanFontBold'>You won!</span>
-                <span className='spanFont13'>Now go ahead and click that Play again button.</span>
-                <span className='spanFont13'>I'm sure I can beat you this time.</span>
+                <h3 className='modalTitleCorrect'>{YOU_ARE_ON_FIRE}</h3>
+                <span className='spanFontBold'>{YOU_WON}</span>
+                <span className='spanFont13'>{WIN_PLAY_AGAIN_MESSAGE}</span>
+                <span className='spanFont13'>{BEAT_YOU_MESSAGE}</span>
               </div>
             </div>
           )}
@@ -36,15 +38,15 @@ const GameOverModal = (props) => {
             <div>
             <img src={GameLostStickman} alt='Game lost stickman'/>
               <div className='modalTextWrapper'>
-                <h3 className='modalTitleIncorrect'>Nah, that wasn't it.</h3>
-                <span className='spanFontBold'>The word was <span id='selectedWord'>{selectedWord}</span>.</span>
-                <span className='spanFont12'>Click the Play again button and show us you can do it!</span>
+                <h3 className='modalTitleIncorrect'>{YOU_LOST_MESSAGE}</h3>
+                <span className='spanFontBold'>{WORD_WAS}<span id='selectedWord'>{selectedWord}</span>.</span>
+                <span className='spanFont12'>{LOSE_PLAY_AGAIN_MESSAGE}</span>
               </div>
             </div>
           )}
           <div className='modalBtnsWrapper'>
-            <button className='modalBtnPlay' onClick={onPlayAgain}>Play again</button>
-            <button className='modalBtnCancel' onClick={onCancel}>Close</button>
+            <button className='modalBtnPlay' onClick={onPlayAgain}>{PLAY_AGAIN_BTN}</button>
+            <button className='modalBtnCancel' onClick={onCancel}>{CANCEL_BTN}</button>
           </div>
         </div>
       </div>

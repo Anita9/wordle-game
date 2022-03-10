@@ -1,8 +1,11 @@
 import { useEffect } from "react";
+import Key from "./Key";
+
 import { getExistingWordsStatuses } from "../helper";
+import {DELETE_BTN, ENTER_BTN} from '../Strings';
 
 import './Components.css';
-import Key from "./Key";
+
 
 const Keyboard = (props) => {
   const {
@@ -76,7 +79,7 @@ const Keyboard = (props) => {
       </div>
       <div className="keyboardRow">
         <Key value={"ENTER"} onClick={onClick}>
-          ENTER
+          {ENTER_BTN}
         </Key>
         {thirdRow.map(key => (
           <Key
@@ -87,7 +90,7 @@ const Keyboard = (props) => {
           />
         ))}
         <Key value="DELETE" onClick={onClick}>
-          DELETE
+          {DELETE_BTN}
         </Key>
       </div>
     </div>

@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import WordsContainer from './components/WordsContainer';
-
-import './App.css';
-import { getWordArrayLength, isCorrectWord, chosenWord, splitWord } from './helper';
 import Keyboard from './components/Keyboard';
 import GameOverModal from './components/GameOverModal';
+
+import { getWordArrayLength, isCorrectWord, chosenWord, splitWord } from './helper';
+import {MAX_ATTEMPTS, MAX_WORD_LENGTH} from './Constants';
+import {GAME_TITLE} from './Strings';
+
+import './App.css';
 
 const App = () => {
 
@@ -27,7 +30,7 @@ const App = () => {
 
     const correctWord = isCorrectWord(currentGuessedWord);
 
-    if(getWordArrayLength(currentGuessedWord) === 6 && guessedWords.length < 7 && !isWordCorrect) {
+    if(getWordArrayLength(currentGuessedWord) === MAX_WORD_LENGTH && guessedWords.length < MAX_ATTEMPTS && !isWordCorrect) {
       setGuessedWords([...guessedWords, currentGuessedWord]);
       setCurrentGuessedWord('');
 
@@ -36,7 +39,7 @@ const App = () => {
         setShowGameOverModal(true);
       }
 
-      if (guessedWords.length === 6) {
+      if (guessedWords.length === MAX_ATTEMPTS - 1) {
         setIsWordIncorrect(true);
         setShowGameOverModal(true);
       }
@@ -49,7 +52,7 @@ const App = () => {
 
   const onChar = value => {
     setIsWriting(true);
-    if(getWordArrayLength(`${currentGuessedWord}${value}`) <= 6 && guessedWords.length < 7 && !isWordCorrect) {
+    if(getWordArrayLength(`${currentGuessedWord}${value}`) <= MAX_WORD_LENGTH && guessedWords.length < MAX_ATTEMPTS && !isWordCorrect) {
       setCurrentGuessedWord(`${currentGuessedWord}${value}`);
     }
     setTimeout(() => {setIsWriting(false)}, 150);
@@ -66,7 +69,7 @@ const App = () => {
 
   return (
     <div className='container'>
-      <h1>The Wordle Game</h1>
+      <h1>{GAME_TITLE}</h1>
       <WordsContainer
         guessedWords={guessedWords}
         currentGuessedWord={currentGuessedWord}

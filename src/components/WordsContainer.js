@@ -1,6 +1,8 @@
 import CompletedWord from './CompletedWord';
 import CurrentWord from './CurrentWord';
 
+import {MAX_ATTEMPTS} from '../Constants';
+
 import './Components.css';
 
 const WordsContainer = (props) => {
@@ -23,7 +25,7 @@ const WordsContainer = (props) => {
       ))
     }
     {
-      guessedWords.length < 7 && !isWordCorrect && !isWordIncorrect && (
+      guessedWords.length < MAX_ATTEMPTS && !isWordCorrect && !isWordIncorrect && (
         <CurrentWord
           currentGuessedWord={currentGuessedWord}
           guessedWords={guessedWords}
