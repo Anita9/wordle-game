@@ -2,6 +2,7 @@ import words from './words.json';
 
 export const getSelectedWord = () => {
   const chosenWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
+  console.log("%cThe correct word is: ", "color: green; font-size: 14px", chosenWord);
   return chosenWord;
 }
 

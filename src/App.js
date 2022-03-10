@@ -64,8 +64,6 @@ const App = () => {
     setShowGameOverModal(false);
   }
 
-  console.log('selectedword ', selectedWord);
-
   return (
     <div className='container'>
       <h1>The Wordle Game</h1>
