@@ -22,6 +22,12 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # 👇 ADD THIS STEP
+      - name: Set Git identity
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
       - name: Deploy to gh-pages
         run: |
           npm install -g gh-pages
