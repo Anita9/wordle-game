@@ -2,12 +2,12 @@
   display: grid;
   width: 40%;
   height: 60vh;
-  grid-template-rows: repeat(6, 14%);
+  grid-template-rows: repeat(5, 25%);
 }
 
 .rowContainer {
   display: grid;
-  grid-template-columns: repeat(6, 16.5%);
+  grid-template-columns: repeat(5, 20%);
   justify-items: center;
 }
 
