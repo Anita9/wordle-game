@@ -2,7 +2,7 @@
   display: grid;
   width: 40%;
   height: 60vh;
-  grid-template-rows: repeat(5, 25%);
+  grid-template-rows: repeat(5, 20%);
 }
 
 .rowContainer {
