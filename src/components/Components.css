@@ -1,7 +1,7 @@
 .wordsContainer {
   display: grid;
   width: 40%;
-  height: 60vh;
+  height: 50vh;
   grid-template-rows: repeat(5, 20%);
 }
 
