@@ -8,12 +8,6 @@ const CompletedWord = (props) => {
   const splittedWord = splitWord(guessedWord);
   const statuses = getWordStatuses(guessedWord);
 
-  console.log("CompletedWord.js - guessed word: ", guessedWord);
-  console.log("CompletedWord.js - splittedWord: ", splittedWord);
-  console.log("CompletedWord.js - statuses: ", statuses);
-  
-  
-
   return (
     <div className='rowContainer'>
       {
