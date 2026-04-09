@@ -16,6 +16,8 @@ const GameOverModal = (props) => {
     onCancel
   } = props;
 
+  console.log("Game over modal props: ", props);
+
   return (
     <div>
       <div
