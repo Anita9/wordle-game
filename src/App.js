@@ -28,6 +28,13 @@ const App = () => {
       return;
     }
 
+    if (isWordCorrect) {
+      setIsWordIncorrect(false);
+    } 
+    else {
+      setIsWordIncorrect(true);
+    }
+
     const correctWord = isCorrectWord(currentGuessedWord);
 
     if(getWordArrayLength(currentGuessedWord) === MAX_WORD_LENGTH && guessedWords.length < MAX_ATTEMPTS && !isWordCorrect) {
