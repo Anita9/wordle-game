@@ -47,6 +47,7 @@ const App = () => {
       }
 
       if (guessedWords.length === MAX_ATTEMPTS - 1) {
+        console.log("max attempts: ", MAX_ATTEMPTS);
         setIsWordIncorrect(true);
         setShowGameOverModal(true);
       }
