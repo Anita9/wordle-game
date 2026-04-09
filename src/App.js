@@ -40,6 +40,9 @@ const App = () => {
       }
 
       if (guessedWords.length === MAX_ATTEMPTS - 1 && !isWordCorrect) {
+        console.log("guessedWords: ", guessedWords.length);
+        console.log("max attempts ", MAX_ATTEMPTS);
+        console.log("iswordcorrect ", isWordCorrect);
         setIsWordIncorrect(true);
         setShowGameOverModal(true);
       }
