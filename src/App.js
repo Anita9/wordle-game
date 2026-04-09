@@ -35,6 +35,7 @@ const App = () => {
       setCurrentGuessedWord('');
 
       if (correctWord) {
+        console.log("IN CORRECT WORD ", correctWord);
         setIsWordCorrect(true);
         setShowGameOverModal(true);
       }
